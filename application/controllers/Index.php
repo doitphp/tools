@@ -66,7 +66,7 @@ class IndexController extends PublicController {
 		//assign params
 		$this->assign(array(
 		'serverResult' => ($missArray) ? '<span class="red">$_SERVER不支持的变量为: ' . implode(', ', $missArray) . '</span>' : 'Yes',
-		'webappPath'   => rtrim(WEB_APP_PATH, '/') . DIRECTORY_SEPARATOR,
+		'webappPath'   => rtrim(WEB_APP_PATH, '/') . DS,
 		'databaseInfo' => implode(',', $databaseArray),
 		'gdResult'     => $gdResult,
 		));
@@ -85,7 +85,7 @@ class IndexController extends PublicController {
 
 
 		//parse webapp dir
-		$webappPath = rtrim(WEB_APP_PATH, '/').DIRECTORY_SEPARATOR;
+		$webappPath = rtrim(WEB_APP_PATH, '/').DS;
 		$webappStatus = !is_dir($webappPath) ? false : true;
 
 		//parse wethoer apache server

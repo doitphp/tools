@@ -89,7 +89,7 @@ class CtrController extends PublicController {
 		$description = $this->post('note_description_box');
 
 		//parse controller file path
-		$webAppPath = rtrim(WEB_APP_PATH, '/').DIRECTORY_SEPARATOR;
+		$webAppPath = rtrim(WEB_APP_PATH, '/').DS;
 		$webAppPath = str_replace('\\', '/', $webAppPath);
 
 		$controllerFilePath = $webAppPath . $controllerPath;
@@ -705,7 +705,7 @@ class CtrController extends PublicController {
         $description = $this->post('note_description_box');
 
         //parse widget file path
-        $webAppPath = rtrim(WEB_APP_PATH, '/').DIRECTORY_SEPARATOR;
+        $webAppPath = rtrim(WEB_APP_PATH, '/').DS;
         $webAppPath = str_replace('\\', '/', $webAppPath);
 
         $widgetFilePath = $webAppPath . $widgetPath;
@@ -819,7 +819,7 @@ class CtrController extends PublicController {
 	    $description = $this->post('note_description_box');
 
 	    //parse widget file path
-	    $webAppPath  = rtrim(WEB_APP_PATH, '/').DIRECTORY_SEPARATOR;
+	    $webAppPath  = rtrim(WEB_APP_PATH, '/').DS;
 	    $webAppPath  = str_replace('\\', '/', $webAppPath);
 
 	    $extFilePath = $webAppPath . $extPath . '/' . $extName;

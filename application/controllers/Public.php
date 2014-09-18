@@ -64,7 +64,7 @@ class PublicController extends Controller {
 	protected function _parseWebAppRoot() {
 
 		//分析webapp目录是否存在
-		$webappPath = rtrim(WEB_APP_PATH, '/').DIRECTORY_SEPARATOR;
+		$webappPath = rtrim(WEB_APP_PATH, '/').DS;
 		if (!is_dir($webappPath)) {
 			$errorMsg = "对不起！项目目录：{$webappPath} 不存在！请创建项目根目录";
 			if (substr(Doit::getActionName(), 0, 4) == 'ajax') {

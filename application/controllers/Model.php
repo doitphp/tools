@@ -135,9 +135,13 @@ class ModelController extends PublicController {
 				$dbParams['charset'] = 'utf8';
 			}
 
+			//分析数据表名称
+			if ($dbParams['prefix']) {
+				$modelTableName = $dbParams['prefix'] . $modelTableName;
+			}
+
 			//数据库连接
 			$dbObj     = DbPdo::getInstance($dbParams);
-
 			$tableInfo = $dbObj->getTableInfo($modelTableName);
 		}
 
@@ -148,7 +152,7 @@ class ModelController extends PublicController {
 		$description = $this->post('note_description_box');
 
 		//分析model文件的路径
-		$webAppPath = rtrim(WEB_APP_PATH, '/').DIRECTORY_SEPARATOR;
+		$webAppPath = rtrim(WEB_APP_PATH, '/').DS;
 		$webAppPath = str_replace('\\', '/', $webAppPath);
 
 		$modelFilePath = $webAppPath . $modelPath;

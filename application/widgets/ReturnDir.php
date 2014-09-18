@@ -25,7 +25,7 @@ class ReturnDirWidget extends Widget {
 		$dir = $this->get('path');
 		$dir = (!$dir) ? $dir : str_replace('//', '/', $dir);
 
-		$webAppPath = rtrim(WEB_APP_PATH, '/').DIRECTORY_SEPARATOR;
+		$webAppPath = rtrim(WEB_APP_PATH, '/').DS;
 
 		//parse path
 		$path = $webAppPath . $dir;

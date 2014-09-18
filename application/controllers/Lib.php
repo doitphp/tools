@@ -71,7 +71,7 @@ class LibController extends PublicController {
 	    $description = $this->post('note_description_box');
 
 	    //分析model文件的路径
-	    $webAppPath = rtrim(WEB_APP_PATH, '/').DIRECTORY_SEPARATOR;
+	    $webAppPath = rtrim(WEB_APP_PATH, '/').DS;
 	    $webAppPath = str_replace('\\', '/', $webAppPath);
 
 	    $classFilePath = $webAppPath . $classPath;

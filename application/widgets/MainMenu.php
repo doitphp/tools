@@ -20,7 +20,7 @@ class MainMenuWidget extends Widget {
 	 */
 	public function renderContent($params = null) {
 
-		$webappStatus = (is_dir(rtrim(WEB_APP_PATH, '/') . DIRECTORY_SEPARATOR . 'application')) ? true : false;
+		$webappStatus = (is_dir(rtrim(WEB_APP_PATH, '/') . DS . 'application')) ? true : false;
 
 		//assign params
 		$this->assign(array(

@@ -56,7 +56,7 @@ class ModuleController extends PublicController {
 	        $this->ajax(false, '对不起，错误的参数调用！');
 	    }
 
-	    $webAppPath  = rtrim(WEB_APP_PATH, '/').DIRECTORY_SEPARATOR;
+	    $webAppPath  = rtrim(WEB_APP_PATH, '/').DS;
 	    $webAppPath  = str_replace('\\', '/', $webAppPath);
 
 	    $moduleDir   = $webAppPath . $modulePath . '/' . $moduleName;
