@@ -80,28 +80,28 @@ class fileCreator {
 		$access 	= self::parseAccess($access);
 		$info 		= (!$info) ? 'Enter description here ...' : $info;
 
-		$string  = "\n    /**\n";
-		$string .= "     * {$info}\n";
-		$string .= "     *\n";
+		$string  = "\n\t/**\n";
+		$string .= " \t* {$info}\n";
+		$string .= " \t*\n";
 
 		if ($desc) {
-			$string .= "     * {$desc}\n";
-			$string .= "     *\n";
+			$string .= " \t* {$desc}\n";
+			$string .= " \t*\n";
 		}
 
-		$string .= "     * @access {$access}\n";
+		$string .= " \t* @access {$access}\n";
 
 		//分析类方法参数
 		if ($params && is_array($params) && is_array($params[0])) {
-			$string .= "     *\n";
+			$string .= " \t*\n";
 			foreach ($params as $lines) {
-				$string .= "     * @param {$lines[1]} \${$lines[0]}" . (isset($lines[2]) ? ' '. $lines[2] : ''). "\n";
+				$string .= " \t* @param {$lines[1]} \${$lines[0]}" . (isset($lines[2]) ? ' '. $lines[2] : ''). "\n";
 			}
-			$string .= "     *\n";
+			$string .= " \t*\n";
 		}
 
-		$string .= "     * @return {$return}\n";
-		$string .= "     */\n";
+		$string .= " \t* @return {$return}\n";
+		$string .= " \t*/\n";
 
 		return $string;
 	}
@@ -158,13 +158,13 @@ class fileCreator {
 			unset($paramArray);
 		}
 
-		$string  = "    {$access} " . ($isStatic === true ? 'static ' : '') . "function {$methodName}({$paramString}) {\n";
+		$string  = "\t{$access} " . ($isStatic === true ? 'static ' : '') . "function {$methodName}({$paramString}) {\n";
 
 		if (!is_null($content) && is_string($content)) {
-			$string .= "        {$content}";
+			$string .= "\t\t{$content}";
 		}
 
-		$string .= "\n    }\n";
+		$string .= "\n\t}\n";
 
 		return $string;
 	}
