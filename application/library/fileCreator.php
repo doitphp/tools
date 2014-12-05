@@ -81,27 +81,27 @@ class fileCreator {
 		$info 		= (!$info) ? 'Enter description here ...' : $info;
 
 		$string  = "\n\t/**\n";
-		$string .= " \t* {$info}\n";
-		$string .= " \t*\n";
+		$string .= "\t * {$info}\n";
+		$string .= "\t *\n";
 
 		if ($desc) {
-			$string .= " \t* {$desc}\n";
-			$string .= " \t*\n";
+			$string .= "\t * {$desc}\n";
+			$string .= "\t *\n";
 		}
 
-		$string .= " \t* @access {$access}\n";
+		$string .= "\t * @access {$access}\n";
 
 		//分析类方法参数
 		if ($params && is_array($params) && is_array($params[0])) {
-			$string .= " \t*\n";
+			$string .= "\t *\n";
 			foreach ($params as $lines) {
-				$string .= " \t* @param {$lines[1]} \${$lines[0]}" . (isset($lines[2]) ? ' '. $lines[2] : ''). "\n";
+				$string .= "\t * @param {$lines[1]} \${$lines[0]}" . (isset($lines[2]) ? ' '. $lines[2] : ''). "\n";
 			}
-			$string .= " \t*\n";
+			$string .= "\t *\n";
 		}
 
-		$string .= " \t* @return {$return}\n";
-		$string .= " \t*/\n";
+		$string .= "\t * @return {$return}\n";
+		$string .= "\t */\n";
 
 		return $string;
 	}
