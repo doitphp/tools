@@ -77,7 +77,7 @@ class CtrController extends PublicController {
 
 		//Controller名称过虑
 		if(in_array($controllerName, array('Layout', 'Errors'))){
-			$this->ajax(false, '对不起，输入Controller名称为系统预留关键词，为了避免文件冲突请更改为其它名称！');
+			$this->ajax(false, '对不起，Controller名称不能为系统关键词，请重新输入');
 		}
 
 		$viewStatus     = $this->post('controller_view_state');
