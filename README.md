@@ -1,6 +1,6 @@
-doitphp tools v2.2
+doitphp tools v2.3
 ==================
-DoitPHP Tools V2.2 是doitphp v2.2的辅助开发工具，俗称“脚手架”。使用本工具，可以提高项目开发效率。
+DoitPHP Tools V2.3 是doitphp v2.3的辅助开发工具，俗称“脚手架”。使用本工具，可以提高项目开发效率。
 
 功能：
 1、快速创建doitphp的项目目录。
