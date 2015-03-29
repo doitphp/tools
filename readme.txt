@@ -1,4 +1,4 @@
-DoitPHP Tools V2.2 
+DoitPHP Tools V2.3
 =============================
 
 ¸ÐÐ»ÄúÑ¡ÓÃdoitphp tools£¬ÕâÊÇÒ»¸ödoitphpµÄ¸¨Öú¿ª·¢¹¤¾ß¡£Ê¹ÓÃ±¾³ÌÐò£¬¿ÉÔÚ¿ìËÙ¿ª·¢ÏîÄ¿´úÂë¡£
@@ -22,7 +22,7 @@ doitphp tools¶ÀÁ¢³öÀ´£¬ÏîÄ¿´úÂëÊ¹ÓÃsvn, git°æ±¾¿ØÖÆ¹ÜÀí¹¤¾ßÏòÏßÉÏ·þÎñÆ÷²¿Êð´úÂëÊ
 /**
  * ×Ô¶¨ÒåDoitPHP¿ò¼ÜÄ¿Â¼ÎÄ¼þËùÔÚÂ·¾¶¡£×¢£º½áÎ²ÎÞÐè"/"¡£
  */
-define('DOITPHP_PATH', APP_ROOT . '../doitphp');
+define('DOITPHP_PATH', APP_ROOT . '/../doitphp');
 
 /**
  * ×Ô¶¨ÒåËùÒª´´½¨¼°¹ÜÀíÏîÄ¿(project)µÄÄ¿Â¼Â·¾¶¡£×¢£º½áÎ²ÎÞÐè"/"¡£
@@ -68,7 +68,7 @@ $config['loginUser'] = array(
 /**
  * ¼ÓÔØDoitPHP¿ò¼ÜµÄ³õÊ¼»¯ÎÄ¼þ,Èç¹û±ØÒª¿ÉÒÔÐÞ¸ÄÎÄ¼þÂ·¾¶
  */
-require_once APP_ROOT . 'doitphp/DoitPHP.php';
+require_once APP_ROOT . '/doitphp/DoitPHP.php';
 
 ¾ÍÊÇÉÏÃærequire_onceµÄÎÄ¼þ(DoitPHP.php)Â·¾¶¡£Èç¹û²»Êµ£¬Çë¸ü¸ÄÒ»ÏÂ¡£
 ÒòÎªdoitphp tools¶ÀÁ¢Ö®ºó£¬DoitPHP.phpµÄÂ·¾¶Ïà¶Ô´´½¨µÄÄ¿Â¼Áé»î¶àÁË¡£doitphp tools²»ÄÜ×¼È·ÅÐ¶Ï³öÀ´¡£
