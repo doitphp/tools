@@ -75,6 +75,11 @@ class CtrController extends PublicController {
 		}
 		$controllerName = ucfirst(strtolower($controllerName));
 
+		//Controller名称过虑
+		if(in_array($controllerName, array('Layout', 'Errors'))){
+			$this->ajax(false, '对不起，输入Controller名称为系统预留关键词，为了避免文件冲突请更改为其它名称！');
+		}
+
 		$viewStatus     = $this->post('controller_view_state');
 		$viewFileStatus = $this->post('controller_view_file_state');
 		$viewFileExt    = $this->post('controller_view_file_ext', 'php');
