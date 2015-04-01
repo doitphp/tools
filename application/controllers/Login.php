@@ -128,7 +128,7 @@ class LoginController extends Controller {
 	 */
 	public function vdcodeAction() {
 
-		$this->instance('PinCode')->setSessionName(self::PINCODE_SESSION_NAME)->show();
+		$this->instance('Captcha')->setSessionName(self::PINCODE_SESSION_NAME)->show();
 	}
 
 }

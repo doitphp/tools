@@ -39,7 +39,7 @@ class ModelController extends PublicController {
 			foreach ($tableList as $tableName) {
 				$selectContentArray[$tableName] = $tableName;
 			}
-			$tableListHtml = Html::select($selectContentArray, array('name'=>'model_table_name_box', 'class'=>'text', 'style'=>'line-height:24px; height:24px; width:auto;', 'id'=>'model_table_name_select'), Cookie::get('model_table_name_box'));
+			$tableListHtml = Html::select($selectContentArray, array('name'=>'model_table_name_box', 'class'=>'text', 'style'=>'line-height:24px; height:24px; width:auto;', 'id'=>'model_table_name_select'), Doit::singleton('Cookie')->get('model_table_name_box'));
 		} else {
 			$tableListHtml = '<input type="text" class="text" style="width:150px;" name="model_table_name_box" id="model_table_name_select"/>';
 		}
@@ -51,7 +51,7 @@ class ModelController extends PublicController {
 		'timeNow'       => time(),
 		'methodList'    => $methodObj->getMethodList(),
 		'tableNameHtml' => $tableListHtml,
-		'bindTableStatus' => (Cookie::get('model_tabname_status_box') == 'on') ? true : false,
+		'bindTableStatus' => (Doit::singleton('Cookie')->get('model_tabname_status_box') == 'on') ? true : false,
 		));
 
 		//display page

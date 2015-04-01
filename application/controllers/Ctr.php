@@ -41,9 +41,9 @@ class CtrController extends PublicController {
 		'timeNow' => time(),
 		'actionList' => $actionObj->getAction(),
 		'methodList' => $methodObj->getMethodList(),
-		'viewDirStatus' => (Cookie::get('controller_view_state') == 'on') ? true : false,
-		'viewFileStatus' => (Cookie::get('controller_view_file_state') == 'on') ? true : false,
-		'viewFileExt' => Cookie::get('controller_view_file_ext'),
+		'viewDirStatus' => (Doit::singleton('Cookie')->get('controller_view_state') == 'on') ? true : false,
+		'viewFileStatus' => (Doit::singleton('Cookie')->get('controller_view_file_state') == 'on') ? true : false,
+		'viewFileExt' => Doit::singleton('Cookie')->get('controller_view_file_ext'),
 		));
 
 		//display page
@@ -669,8 +669,8 @@ class CtrController extends PublicController {
 	    $this->assign(array(
 		'path' => $path,
 		'assetUrl' => $this->getAssetUrl('doit/js'),
-		'viewFileStatus' => (Cookie::get('widget_view_file_state') == 'on') ? true : false,
-		'viewFileExt' => Cookie::get('widget_view_file_ext'),
+		'viewFileStatus' => (Doit::singleton('Cookie')->get('widget_view_file_state') == 'on') ? true : false,
+		'viewFileExt' => Doit::singleton('Cookie')->get('widget_view_file_ext'),
 	    ));
 
 	    //display page

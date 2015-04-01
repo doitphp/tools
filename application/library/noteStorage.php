@@ -49,7 +49,7 @@ class noteStorage {
 			'link' => $link,
 		);
 
-		return Cookie::set(self::NOTE_COOKIE_NAME, serialize($data), self::COOKIE_EXPIRE_TIME);
+		return Doit::singleton('Cookie')->set(self::NOTE_COOKIE_NAME, serialize($data), self::COOKIE_EXPIRE_TIME);
 	}
 
 	/**
@@ -60,7 +60,7 @@ class noteStorage {
 	 */
 	public function getNote() {
 
-		$storageData = Cookie::get(self::NOTE_COOKIE_NAME);
+		$storageData = Doit::singleton('Cookie')->get(self::NOTE_COOKIE_NAME);
 		if (!$storageData) {
 			return false;
 		}
