@@ -698,6 +698,10 @@ class CtrController extends PublicController {
 	    if (!$widgetName) {
 	        $this->ajax(false, '对不起，Widget 名称不能为空！');
 	    }
+		//预留关键词判断
+		if (substr($widgetName, 0, 6) == 'views_') {
+			$this->ajax(false, '对不起，widget名称不能以views_开头，与DoitPHP关键词冲突！请更换');
+		}
         $viewStatus  = $this->post('widget_view_file_state');
         $viewFileExt = $this->post('widget_view_file_ext', 'php');
 

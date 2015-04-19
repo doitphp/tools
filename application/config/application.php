@@ -28,10 +28,10 @@ $config['loginCookieName'] = 'doitToolsLoinStatus';
 $config['gotoUrlCookieName'] = 'doitToolsGotoUrl';
 
 //设置数据库连接参数
-$config['db'] = array(
+/*$config['db'] = array(
 	'dsn'      => 'mysql:host=localhost;dbname=yourDbname',
-	'username' => 'yourUserName',
+	'username' => 'root',
 	'password' => 'yourPassword',
 	'charset'  => 'utf8',
 	'prefix'   => '',
-);
+);*/
