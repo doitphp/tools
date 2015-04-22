@@ -104,11 +104,11 @@ class CtrController extends PublicController {
 		$pos = strpos($controllerName, '_');
 		if ($pos !== false) {
 			$childDirArray       = explode('_', strtolower($controllerName));
-			$controllerFileName  = ucfirst(array_pop($childDirArray)) . '.php';
+			$controllerFileName  = ucfirst(array_pop($childDirArray)) . 'Controller.php';
 			$controllerFilePath .= '/' . implode('/', $childDirArray);
 
 		} else {
-		    $controllerFileName  = $controllerName . '.php';
+		    $controllerFileName  = $controllerName . 'Controller.php';
 		}
 		$controllerFilePath .= '/' . $controllerFileName;
 
@@ -732,7 +732,7 @@ class CtrController extends PublicController {
             $widgetFileName = $widgetName;
         }
 
-        $widgetFilePath .= '/' . $widgetFileName . '.php';
+        $widgetFilePath .= '/' . $widgetFileName . 'Widget.php';
 
         //parse widget file wether exists
         if (is_file($widgetFilePath)) {
@@ -837,7 +837,7 @@ class CtrController extends PublicController {
 	    File::makeDir($extFilePath);
 
 	    $extFileName  = $extName;
-	    $extFilePath .= '/' . $extFileName . '.php';
+	    $extFilePath .= '/' . $extFileName . 'Ext.php';
 
 	    //判断文件是否存在
 	    if (is_file($extFilePath)) {

@@ -162,10 +162,10 @@ class ModelController extends PublicController {
 		$pos = strpos($modelName, '_');
 		if ($pos !== false) {
 			$childDirArray  = explode('_', $modelName);
-			$modelFileName  = array_pop($childDirArray) . '.php';
-			$modelFilePath .= '/' . strtolower(implode('/', $childDirArray));
+			$modelFileName  = array_pop($childDirArray) . 'Model.php';
+			$modelFilePath .= '/' . implode('/', $childDirArray);
 		} else {
-		    $modelFileName = $modelName . '.php';
+		    $modelFileName = $modelName . 'Model.php';
 		}
 		$modelFilePath .= '/' . $modelFileName;
 

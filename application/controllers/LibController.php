@@ -82,7 +82,7 @@ class LibController extends PublicController {
 	    if ($pos !== false) {
 	        $childDirArray  = explode('_', $className);
 	        $classFileName  = array_pop($childDirArray) . '.php';
-	        $classFilePath .= '/' . strtolower(implode('/', $childDirArray));
+	        $classFilePath .= '/' . implode('/', $childDirArray);
 	    } else {
 	        $classFileName = $className . '.php';
 	    }
