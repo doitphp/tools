@@ -761,7 +761,7 @@ class CtrController extends PublicController {
             $viewDirPath = str_replace('//', '/', $viewDirPath);
             File::makeDir($viewDirPath);
 
-            $viewFilePath = $viewDirPath . '/' . strtolower($widgetName) . '.' . $viewFileExt;
+            $viewFilePath = $viewDirPath . '/' . $widgetName . '.' . $viewFileExt;
             File::writeFile($viewFilePath);
         }
 

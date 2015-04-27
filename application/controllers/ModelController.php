@@ -348,6 +348,11 @@ class ModelController extends PublicController {
 			$this->ajax(false, '对不起，参数不正确！');
 		}
 
+		//系统关键词过滤，防止methode命名与Model基类中的类方法冲突
+		if (in_array($name, array('insert', 'replace', 'update', 'delete', 'find', 'findAll', 'getOne', 'getAll'))) {
+			$this->ajax(false, '对不起，所要添加的Method名与系统关键词冲突，请更换！');
+		}
+
 		//instance cookie storage
 		$storageObj = $this->instance('modelMethodStorage');
 
