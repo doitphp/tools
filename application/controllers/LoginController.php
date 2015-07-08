@@ -82,7 +82,7 @@ class LoginController extends Controller {
 			$gotoUrl = $this->_parseGotoUrl();
 
 			//当用户输入的用户名及密码正确
-			$this->setCookie(Configure::get('loginCookieName'), true, 3600*8);
+			$this->setCookie(Configure::get('loginCookieName'), true, 3600*12);
 
 			$this->ajax(true, null, array('nexturl'=>$gotoUrl));
 		} else {
