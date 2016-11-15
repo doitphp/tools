@@ -32,7 +32,11 @@ function deleteFile(file, isdir){
 	}, 'json');
 }
 </script>
-<?php echo Script::ajaxFormSubmit('#upload_file_form_box', 'uploadRequest', 'uploadResponse', 'json'); ?>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#upload_file_form_box').ajaxForm({beforeSubmit:uploadRequest,success:uploadResponse,dataType:'json'});
+	});
+</script>
 <!-- webapp note-->
 <div style="margin-left:20px; height:30px;"><span class="blue"><b>WebApp Path</b></span>:&nbsp;&nbsp;<?php if(is_dir($webAppPath)) {echo '<span class="green">' . $webAppPath . '</span>'; echo is_writable($webAppPath) ? ' ( Writable )' : ' ( <span class="red">unwriteable</span> )';} else { echo '<span class="red"><b>' . $webAppPath . '</b></span> 注：<span class="red">当前目录不存在!</span>'; } ?> </div>
 <!-- /webapp note-->

@@ -26,7 +26,11 @@ function ajaxFormResponse(data){
 	}
 }
 </script>
-<?php echo Script::ajaxFormSubmit('#create_ext_form_box', 'ajaxFormRequest', 'ajaxFormResponse', 'json'); ?>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#create_ext_form_box').ajaxForm({beforeSubmit:ajaxFormRequest,success:ajaxFormResponse,dataType:'json'});
+	});
+</script>
 <fieldset>
 <legend>创建扩展模块：</legend>
 <?php $this->widget('ReturnDir'); ?>

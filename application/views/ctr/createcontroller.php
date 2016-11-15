@@ -129,7 +129,11 @@ function ajaxFormResponse(data){
 	}
 }
 </script>
-<?php echo Script::ajaxFormSubmit('#create_controller_form_box', 'ajaxFormRequest', 'ajaxFormResponse', 'json'); ?>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#create_controller_form_box').ajaxForm({beforeSubmit:ajaxFormRequest,success:ajaxFormResponse,dataType:'json'});
+	});
+</script>
 <fieldset>
 <legend>创建Controller文件：</legend>
 <?php $this->widget('ReturnDir'); ?>

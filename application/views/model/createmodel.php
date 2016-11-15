@@ -111,7 +111,11 @@ function ajaxFormResponse(data){
 	}
 }
 </script>
-<?php echo Script::ajaxFormSubmit('#create_model_form_box', 'ajaxFormRequest', 'ajaxFormResponse', 'json'); ?>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#create_model_form_box').ajaxForm({beforeSubmit:ajaxFormRequest,success:ajaxFormResponse,dataType:'json'});
+	});
+</script>
 <fieldset>
 <legend>创建Model文件：</legend>
 <?php $this->widget('ReturnDir'); ?>

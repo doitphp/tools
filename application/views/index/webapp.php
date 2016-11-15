@@ -16,6 +16,11 @@ function ResponseCallback(data){
 }
 </script>
 <?php echo Script::ajaxFormSubmit('#create_webapp_form', null, 'ResponseCallback', 'json');?>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#create_webapp_form').ajaxForm({success:ResponseCallback,dataType:'json'});
+	});
+</script>
 <!-- create webapp -->
 <?php if($webappStatus == false) { ?>
 <div class="alert">对不起，您还没有创建所要开发的项目目录，请点击“创建WebApp目录”按钮创建项目目录。</div>
