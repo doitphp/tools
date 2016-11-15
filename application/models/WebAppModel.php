@@ -320,7 +320,6 @@ EOT;
 		'assets/css',
 		'assets/images',
 		'assets/js',
-		'assets/doit',
 		);
 
 		$webAppPath = rtrim(WEB_APP_PATH, '/').DS;
@@ -335,13 +334,6 @@ EOT;
 			//创建访问权限保护文件
 			$this->_create403IndexFile($dirPath);
 		}
-
-		//分析doitphp所集成的css及image等资源文件
-		$doitJsPath    = $webAppPath . 'assets/doit/js';
-		$doitImagePath = $webAppPath . 'assets/doit/images';
-
-		File::copyDir(DOIT_ROOT . '/vendors', $doitJsPath);
-		File::copyDir(DOIT_ROOT . '/views/images', $doitImagePath);
 
 		return true;
 	}
