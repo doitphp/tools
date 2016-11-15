@@ -29,7 +29,7 @@ class ReturnDirWidget extends Widget {
 
 		//parse path
 		$path = $webAppPath . $dir;
-		$path = str_replace('//', '/', $path);
+		$path = str_replace(array('\\', '//'), '/', $path);
 
 		//assing params
 		$this->assign(array(
