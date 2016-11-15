@@ -12,8 +12,8 @@ body{margin-left:0;font-family:"Arial Black", Gadget, sans-serif;font-size:14px;
 .ip{height:24px;width:170px;font-size:14px;line-height:24px;border:1px solid #559ED5;background-color:#FFF;}
 -->
 </style>
-<?php echo Script::add('jquery'); ?>
-<?php echo Script::add('form'); ?>
+<script type="text/javascript" src="<?php echo $this->getAssetUrl('js'); ?>/jquery/jquery.min.js?version=1.11.2"></script>
+<script type="text/javascript" src="<?php echo $this->getAssetUrl('js'); ?>/jquery/jquery.form.min.js?version=3.51.0"></script>
 <script type="text/javascript">
 function showRequest(){
 	var user = $('#user_name').val();

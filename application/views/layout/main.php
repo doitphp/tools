@@ -5,8 +5,8 @@
 <title>DoitPHP Tools</title>
 <link href="<?php echo $this->getAssetUrl('images'); ?>/screen.css" rel="stylesheet" type="text/css">
 <!--[if lt IE 8]><link rel="stylesheet" href="<?php echo $this->getAssetUrl('images'); ?>/ie.css" type="text/css"><![endif]-->
-<?php echo Script::add('jquery'); ?>
-<?php echo Script::add('form'); ?>
+<script type="text/javascript" src="<?php echo $this->getAssetUrl('js'); ?>/jquery/jquery.min.js?version=1.11.2"></script>
+<script type="text/javascript" src="<?php echo $this->getAssetUrl('js'); ?>/jquery/jquery.form.min.js?version=3.51.0"></script>
 </head>
 
 <body style="background:#F5F5F5;">
