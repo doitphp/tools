@@ -33,7 +33,7 @@ class LibController extends PublicController {
 	    //assign params
 	    $this->assign(array(
 	            'path'          => $path,
-	            'assetUrl'      => $this->getAssetUrl('doit/js'),
+	            'assetUrl'      => $this->getAssetUrl('js'),
 	            'timeNow'       => time(),
 	            'methodList'    => $methodObj->getMethodList(),
 	    ));

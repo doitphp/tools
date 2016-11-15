@@ -37,7 +37,7 @@ class CtrController extends PublicController {
 		//assign params
 		$this->assign(array(
 		'path' => $path,
-		'assetUrl' => $this->getAssetUrl('doit/js'),
+		'assetUrl' => $this->getAssetUrl('js'),
 		'timeNow' => time(),
 		'actionList' => $actionObj->getAction(),
 		'methodList' => $methodObj->getMethodList(),
@@ -668,7 +668,7 @@ class CtrController extends PublicController {
 	    //assign params
 	    $this->assign(array(
 		'path' => $path,
-		'assetUrl' => $this->getAssetUrl('doit/js'),
+		'assetUrl' => $this->getAssetUrl('js'),
 		'viewFileStatus' => (Doit::singleton('Cookie')->get('widget_view_file_state') == 'on') ? true : false,
 		'viewFileExt' => Doit::singleton('Cookie')->get('widget_view_file_ext'),
 	    ));
@@ -789,7 +789,7 @@ class CtrController extends PublicController {
 	    //assign params
 	    $this->assign(array(
         'path' => $path,
-        'assetUrl' => $this->getAssetUrl('doit/js'),
+        'assetUrl' => $this->getAssetUrl('js'),
 	    ));
 
 	    //display page
