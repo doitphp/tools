@@ -33,8 +33,9 @@ class ReturnDirWidget extends Widget {
 
 		//assing params
 		$this->assign(array(
-		'dir' => $dir,
-		'path' => $path,
+		'dir'          => $dir,
+		'path'         => $path,
+		'baseImageUrl' => $this->getAssetUrl('images'),
 		));
 
 		//display page

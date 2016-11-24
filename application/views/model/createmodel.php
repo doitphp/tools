@@ -114,6 +114,10 @@ function ajaxFormResponse(data){
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#create_model_form_box').ajaxForm({beforeSubmit:ajaxFormRequest,success:ajaxFormResponse,dataType:'json'});
+		var checkStatus = $("#model_tabname_status_box").attr("checked");
+		if(checkStatus=='checked'){
+			$('#model_table_name_box').show();
+		}
 	});
 </script>
 <fieldset>

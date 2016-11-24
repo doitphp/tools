@@ -2,11 +2,11 @@
 /**
  * 控制器文件操作
  *
- * @author tommy <streen003@gmail.com>
+ * @author tommy <tommy@doitphp.com>
  * @link http://www.doitphp.com
  * @copyright Copyright (C) 2012 www.doitphp.com All rights reserved.
  * @license New BSD License.{@link http://www.opensource.org/licenses/bsd-license.php}
- * @version $Id: Ctr.php 1.0 2013-01-11 21:53:32Z tommy <streen003@gmail.com> $
+ * @version $Id: Ctr.php 1.0 2013-01-11 21:53:32Z tommy <tommy@doitphp.com> $
  * @package Controller
  * @since 1.0
  */
@@ -36,14 +36,14 @@ class CtrController extends PublicController {
 
 		//assign params
 		$this->assign(array(
-		'path' => $path,
-		'assetUrl' => $this->getAssetUrl('js'),
-		'timeNow' => time(),
-		'actionList' => $actionObj->getAction(),
-		'methodList' => $methodObj->getMethodList(),
-		'viewDirStatus' => (Doit::singleton('Cookie')->get('controller_view_state') == 'on') ? true : false,
-		'viewFileStatus' => (Doit::singleton('Cookie')->get('controller_view_file_state') == 'on') ? true : false,
-		'viewFileExt' => Doit::singleton('Cookie')->get('controller_view_file_ext'),
+		'path'           => $path,
+		'assetUrl'       => $this->getAssetUrl('js'),
+		'timeNow'        => time(),
+		'actionList'     => $actionObj->getAction(),
+		'methodList'     => $methodObj->getMethodList(),
+		'viewDirStatus'  => ($this->getCookie('controller_view_state') == 'on') ? true : false,
+		'viewFileStatus' => ($this->getCookie('controller_view_file_state') == 'on') ? true : false,
+		'viewFileExt'    => $this->getCookie('controller_view_file_ext'),
 		));
 
 		//display page
@@ -669,8 +669,8 @@ class CtrController extends PublicController {
 	    $this->assign(array(
 		'path' => $path,
 		'assetUrl' => $this->getAssetUrl('js'),
-		'viewFileStatus' => (Doit::singleton('Cookie')->get('widget_view_file_state') == 'on') ? true : false,
-		'viewFileExt' => Doit::singleton('Cookie')->get('widget_view_file_ext'),
+		'viewFileStatus' => ($this->getCookie('widget_view_file_state') == 'on') ? true : false,
+		'viewFileExt' => $this->getCookie('widget_view_file_ext'),
 	    ));
 
 	    //display page

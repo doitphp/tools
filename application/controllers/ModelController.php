@@ -2,11 +2,11 @@
 /**
  * Model文件操作
  *
- * @author tommy <streen003@gmail.com>
+ * @author tommy <tommy@doitphp.com>
  * @link http://www.doitphp.com
  * @copyright Copyright (C) Copyright (c) 2012 www.doitphp.com All rights reserved.
  * @license New BSD License.{@link http://www.opensource.org/licenses/bsd-license.php}
- * @version $Id: Modle.php 1.0 2013-01-11 21:53:32Z tommy <streen003@gmail.com> $
+ * @version $Id: Modle.php 1.0 2013-01-11 21:53:32Z tommy <tommy@doitphp.com> $
  * @package Controller
  * @since 1.0
  */
@@ -39,19 +39,19 @@ class ModelController extends PublicController {
 			foreach ($tableList as $tableName) {
 				$selectContentArray[$tableName] = $tableName;
 			}
-			$tableListHtml = Html::select($selectContentArray, array('name'=>'model_table_name_box', 'class'=>'text', 'style'=>'line-height:24px; height:24px; width:auto;', 'id'=>'model_table_name_select'), Doit::singleton('Cookie')->get('model_table_name_box'));
+			$tableListHtml = Html::select($selectContentArray, array('name'=>'model_table_name_box', 'class'=>'text', 'style'=>'line-height:24px;', 'id'=>'model_table_name_select'), $this->getCookie('model_table_name_box'));
 		} else {
 			$tableListHtml = '<input type="text" class="text" style="width:150px;" name="model_table_name_box" id="model_table_name_select"/>';
 		}
 
 		//assign params
 		$this->assign(array(
-		'path'          => $path,
-		'assetUrl'      => $this->getAssetUrl('js'),
-		'timeNow'       => time(),
-		'methodList'    => $methodObj->getMethodList(),
-		'tableNameHtml' => $tableListHtml,
-		'bindTableStatus' => (Doit::singleton('Cookie')->get('model_tabname_status_box') == 'on') ? true : false,
+		'path'            => $path,
+		'assetUrl'        => $this->getAssetUrl('js'),
+		'timeNow'         => time(),
+		'methodList'      => $methodObj->getMethodList(),
+		'tableNameHtml'   => $tableListHtml,
+		'bindTableStatus' => ($this->getCookie('model_tabname_status_box') == 'on') ? true : false,
 		));
 
 		//display page
@@ -208,7 +208,7 @@ class ModelController extends PublicController {
 		//分析数据表字段信息
 		if ($modelTableStatus) {
 			$modelContent .= fileCreator::methodNote('protected', 'array', array(), '定义数据表主键') . fileCreator::methodCode('primaryKey', 'protected', array(), "return '{$tableInfo['primaryKey'][0]}';");
-			$modelContent .= fileCreator::methodNote('protected', 'array', array(), '定义数据表字段信息') . fileCreator::methodCode('tableFields', 'protected', array(), "return " . var_export($tableInfo['fields'], true) . ";");
+			$modelContent .= fileCreator::methodNote('protected', 'array', array(), '定义数据表字段信息') . fileCreator::methodCode('tableFields', 'protected', array(), "return array('" . implode('\', \'', $tableInfo['fields']) . "');");
 			$modelContent .= fileCreator::methodNote('protected', 'array', array(), '定义数据表名称') . fileCreator::methodCode('tableName', 'protected', array(), "return '{$modelTableName}';");
 		}
 

@@ -47,10 +47,10 @@ function deleteFile(file, isdir){
 <table border="0" cellspacing="0" cellpadding="0">
 <caption>
 <?php if($dir == true) {?>
-<img src="<?php echo $this->getAssetUrl('images'); ?>/file_topdir.gif"  />
+<img src="<?php echo $baseImageUrl; ?>/file_topdir.gif"  />
 <a href="<?php echo $returnUrl; ?>">返回上级目录</a>&nbsp;&nbsp;&nbsp;&nbsp;
 <?php } ?>
-<img src="<?php echo $this->getAssetUrl('images'); ?>/tree_folderopen.gif"  /> 当前目录: <?php echo $path; ?>
+<img src="<?php echo $baseImageUrl; ?>/tree_folderopen.gif"  /> 当前目录: <?php echo $path; ?>
 </caption>
 
 <tr>
@@ -108,7 +108,7 @@ function deleteFile(file, isdir){
  if($lines['isdir'] == 1) {
  ?>
   <tr <?php echo ($key%2 ==1) ? 'class="even"' : ''; ?>>
-    <td width="320" align="left"><img src="<?php echo $this->getAssetUrl('images'); ?>/tree_folder.gif"  /> <a href="<?php echo $this->getSelfUrl(); ?>/?path=<?php echo $dir, '/', $lines['name']; ?>" target="_self"><?php echo $lines['name']; ?></a></td>
+    <td width="320" align="left"><img src="<?php echo $baseImageUrl; ?>/tree_folder.gif"  /> <a href="<?php echo $this->getSelfUrl(); ?>/?path=<?php echo $dir, '/', $lines['name']; ?>" target="_self"><?php echo $lines['name']; ?></a></td>
     <td width="120" align="center">&nbsp;</td>
     <td width="150" align="center"><?php echo $lines['time']; ?></td>
     <td width="60" align="center"><?php echo $lines['mod']; ?></td>
@@ -116,7 +116,7 @@ function deleteFile(file, isdir){
   </tr>
   <?php } else {?>
   <tr <?php echo ($key%2 ==1) ? 'class="even"' : ''; ?>>
-    <td width="320" align="left"><?php if($lines['ico'] == true) { ?><img src="<?php echo $this->getAssetUrl('images'), '/', $lines['ico']; ?>"  /> <?php } echo $lines['name']; ?></td>
+    <td width="320" align="left"><?php if($lines['ico'] == true) { ?><img src="<?php echo $baseImageUrl, '/', $lines['ico']; ?>"  /> <?php } echo $lines['name']; ?></td>
     <td width="120" align="center"><?php echo $lines['size']; ?></td>
     <td width="150" align="center"><?php echo $lines['time']; ?></td>
     <td width="60" align="center"><?php echo $lines['mod']; ?></td>

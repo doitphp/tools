@@ -2,11 +2,11 @@
 /**
  * 默认引导Controller
  *
- * @author tommy <streen003@gmail.com>
+ * @author tommy <tommy@doitphp.com>
  * @link http://www.doitphp.com
  * @copyright Copyright (C) Copyright (c) 2012 www.doitphp.com All rights reserved.
  * @license New BSD License.{@link http://www.opensource.org/licenses/bsd-license.php}
- * @version $Id: Index.php 1.0 2013-01-11 21:53:32Z tommy <streen003@gmail.com> $
+ * @version $Id: Index.php 1.0 2013-01-11 21:53:32Z tommy <tommy@doitphp.com> $
  * @package Controller
  * @since 1.0
  */
@@ -62,7 +62,6 @@ class IndexController extends PublicController {
 			$gdResult = '<span class="red">No</span>';
 		}
 
-
 		//assign params
 		$this->assign(array(
 		'serverResult' => ($missArray) ? '<span class="red">$_SERVER不支持的变量为: ' . implode(', ', $missArray) . '</span>' : 'Yes',
@@ -94,7 +93,7 @@ class IndexController extends PublicController {
 		//assign params
 		$this->assign(array(
 		'webappStatus' => $webappStatus,
-		'isApache' => $isApache,
+		'isApache'     => $isApache,
 		));
 
 		//display page
@@ -176,10 +175,4 @@ class IndexController extends PublicController {
 
 		phpinfo();
 	}
-
-	public function testAction() {
-
-		$this->dump($_COOKIE);
-	}
-
 }

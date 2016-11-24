@@ -3,7 +3,7 @@
  * file: index.php
  *
  * application index
- * @author tommy <streen003@gmail.com>
+ * @author tommy <tommy@doitphp.com>
  * @copyright Copyright (C) 2009-2012 www.doitphp.com All rights reserved.
  * @version $Id: index.php 1.0 2012-02-12 01:14:18Z tommy $
  * @package application
@@ -39,4 +39,4 @@ $config = APP_ROOT . '/application/config/application.php';
 /**
  * 启动应用程序(网站)进程
  */
-doit::run($config);
+Doit::run($config);

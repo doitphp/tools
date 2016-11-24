@@ -4,11 +4,11 @@
  *
  * 提供登陆判断等共用类方法
  *
- * @author tommy <streen003@gmail.com>
+ * @author tommy <tommy@doitphp.com>
  * @link http://www.doitphp.com
  * @copyright Copyright (C) Copyright (c) 2012 www.doitphp.com All rights reserved.
  * @license New BSD License.{@link http://www.opensource.org/licenses/bsd-license.php}
- * @version $Id: Public.php 1.0 2013-01-11 21:53:32Z tommy <streen003@gmail.com> $
+ * @version $Id: Public.php 1.0 2013-01-11 21:53:32Z tommy <tommy@doitphp.com> $
  * @package Controller
  * @since 1.0
  */
@@ -52,6 +52,12 @@ class PublicController extends Controller {
 		//设置layout视图
 		$this->setLayout('main');
 
+		//assign params
+		$this->assign(array(
+		'baseImageUrl'  => $this->getAssetUrl('images'),
+		'baseScriptUrl' => $this->getAssetUrl('js'),
+		));
+
 		return true;
 	}
 
@@ -67,21 +73,15 @@ class PublicController extends Controller {
 		$webappPath = rtrim(WEB_APP_PATH, '/').DS;
 		if (!is_dir($webappPath)) {
 			$errorMsg = "对不起！项目目录：{$webappPath} 不存在！请创建项目根目录";
-			if (substr(Doit::getActionName(), 0, 4) == 'ajax') {
-				$this->ajax(false, $errorMsg);
-			} else {
-				$this->showMsg($errorMsg);
-			}
+
+			$this->showMsg($errorMsg);
 		}
 
 		//分析应用目录
 		if (!is_dir($webappPath . 'application')) {
 			$errorMsg = "对不起！您还没有创建WebApp目录。请进行如下操作:WebApp管理->创建WebApp目录";
-			if (substr(Doit::getActionName(), 0, 4) == 'ajax') {
-				$this->ajax(false, $errorMsg);
-			} else {
-				$this->showMsg($errorMsg);
-			}
+
+			$this->showMsg($errorMsg);
 		}
 
 		return true;

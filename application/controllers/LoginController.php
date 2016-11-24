@@ -2,23 +2,16 @@
 /**
  * 登陆及登出
  *
- * @author tommy <streen003@gmail.com>
+ * @author tommy <tommy@doitphp.com>
  * @link http://www.doitphp.com
  * @copyright Copyright (C) Copyright (c) 2012 www.doitphp.com All rights reserved.
  * @license New BSD License.{@link http://www.opensource.org/licenses/bsd-license.php}
- * @version $Id: Login.php 1.0 2013-01-11 21:53:32Z tommy <streen003@gmail.com> $
+ * @version $Id: Login.php 1.0 2013-01-11 21:53:32Z tommy <tommy@doitphp.com> $
  * @package Controller
  * @since 1.0
  */
 
 class LoginController extends Controller {
-
-	/**
-	 * 验证码内容的session名
-	 *
-	 * @var string
-	 */
-	const PINCODE_SESSION_NAME = 'doitToolsPincodeSessionName';
 
 	/**
 	 * 首页
@@ -52,22 +45,8 @@ class LoginController extends Controller {
 		//获取参数
 		$userName = $this->post('user_name');
 		$passWord = $this->post('user_password');
-		$pincode  = $this->post('vd_code');
-
-		//参数分析
-		if (!$pincode) {
-			$this->ajax(false, '对不起，验证码不能为空！');
-		}
 		if (!$userName || !$passWord) {
 			$this->ajax(false, '对不起，用户名或密码不能为空');
-		}
-
-		//检测验证码
-		$pincode      = strtolower($pincode);
-		$sessionValue = strtolower(Session::get(self::PINCODE_SESSION_NAME));
-
-		if ($pincode != $sessionValue) {
-			$this->ajax(false, '对不起，验证码输入错误，请重新输入');
 		}
 
 		//从配置文件中获取当前的用户名及密码
@@ -78,16 +57,16 @@ class LoginController extends Controller {
 
 		if ($userName == $loginUserInfo['username'] && $passWord == $loginUserInfo['password']) {
 
+			//当用户输入的用户名及密码正确
+			$this->setCookie(Configure::get('loginCookieName'), true, 18000);
+
 			//获取跳转网址
 			$gotoUrl = $this->_parseGotoUrl();
 
-			//当用户输入的用户名及密码正确
-			$this->setCookie(Configure::get('loginCookieName'), true, 3600*12);
-
-			$this->ajax(true, null, array('nexturl'=>$gotoUrl));
-		} else {
-			$this->ajax(false, '对不起，输入的用户名或密码错误');
+			$this->ajax(true, '登陆成功！', array('targetUrl'=>$gotoUrl));
 		}
+
+		$this->ajax(false, '对不起，输入的用户名或密码错误');
 	}
 
 	/**
@@ -107,6 +86,23 @@ class LoginController extends Controller {
 	}
 
 	/**
+	 * 前函数(方法)
+	 *
+	 * @access public
+	 * @return boolean
+	 */
+	public function init() {
+
+		//assign params
+		$this->assign(array(
+		'baseImageUrl'  => $this->getAssetUrl('images'),
+		'baseScriptUrl' => $this->getAssetUrl('js'),
+		));
+
+		return true;
+	}
+
+	/**
 	 * 分析跳转网址
 	 *
 	 * @access protected
@@ -119,16 +115,4 @@ class LoginController extends Controller {
 
 		return $gotoUrl;
 	}
-
-	/**
-	 * 显示验证码
-	 *
-	 * @access public
-	 * @return void
-	 */
-	public function vdcodeAction() {
-
-		$this->instance('Captcha')->setSessionName(self::PINCODE_SESSION_NAME)->show();
-	}
-
 }

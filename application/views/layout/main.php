@@ -3,18 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>DoitPHP Tools</title>
-<link href="<?php echo $this->getAssetUrl('images'); ?>/screen.css" rel="stylesheet" type="text/css">
-<!--[if lt IE 8]><link rel="stylesheet" href="<?php echo $this->getAssetUrl('images'); ?>/ie.css" type="text/css"><![endif]-->
-<script type="text/javascript" src="<?php echo $this->getAssetUrl('js'); ?>/jquery/jquery.min.js?version=1.11.2"></script>
-<script type="text/javascript" src="<?php echo $this->getAssetUrl('js'); ?>/jquery/jquery.form.min.js?version=3.51.0"></script>
+<link href="<?php echo $baseImageUrl; ?>/screen.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 8]><link rel="stylesheet" href="<?php echo $baseImageUrl; ?>/ie.css" type="text/css"><![endif]-->
+<script type="text/javascript" src="<?php echo $baseScriptUrl; ?>/jquery/jquery.min.js?version=1.11.2"></script>
+<script type="text/javascript" src="<?php echo $baseScriptUrl; ?>/jquery/jquery.form.min.js?version=3.51.0"></script>
 </head>
 
-<body style="background:#F5F5F5;">
+<body>
 <!-- total-->
-<div class="container" style="margin-top:20px; padding:30px; background:#FFFFFF; width:900px;">
+<div class="container">
 <!-- top -->
 <div class="header">
-<div><a href="<?php echo $this->getBaseUrl(); ?>/"><img src="<?php echo $this->getAssetUrl('images'); ?>/logo.jpg" width="350" height="70" border="0" title="doitphp tools logo"></a></div>
+<div><a href="<?php echo $this->getBaseUrl(); ?>/"><img src="<?php echo $baseImageUrl; ?>/logo.jpg" width="350" height="70" border="0" title="doitphp tools logo"></a></div>
 <div class="text-align-right" style="padding-right:15px;">欢迎使用: <span class="blue">DoitPHP Tools</span> ( 标准版 )&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo $this->createUrl('login/logout'); ?>">退出</a></div>
 <!-- main menu-->
 <?php $this->widget('MainMenu'); ?>

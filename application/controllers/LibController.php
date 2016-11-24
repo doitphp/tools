@@ -2,11 +2,11 @@
 /**
  * 创建普通的类文件
  *
- * @author tommy<streen003@gmail.com>;
+ * @author tommy<tommy@doitphp.com>;
  * @link http://www.doitphp.com
  * @copyright Copyright (C) 2013 www.doitphp.com All rights reserved.
  * @license New BSD License.{@link http://www.opensource.org/licenses/bsd-license.php}
- * @version $Id: Lib.php 1.0 2013-03-23 00:06:56Z tommy&lt;streen003@gmail.com&gt; $
+ * @version $Id: Lib.php 1.0 2013-03-23 00:06:56Z tommy&lt;tommy@doitphp.com&gt; $
  * @package Controller
  * @since 1.0
  */

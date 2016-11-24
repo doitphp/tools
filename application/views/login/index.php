@@ -7,13 +7,13 @@
 <style type="text/css">
 <!--
 body{margin-left:0;font-family:"Arial Black", Gadget, sans-serif;font-size:14px;line-height:24px;color:#000;margin-top:0;text-align:center;border-style:none;padding:0;}
-.total{height:302px;width:402px;text-align:left;border:1px solid #6EBB23;background-color:##FFF;margin:120px auto 0;padding:30px;}
+.total{height:242px;width:402px;text-align:left;border:1px solid #6EBB23;background-color:##FFF;margin:150px auto 0;padding:30px;}
 .total .login_box{height:300px;width:400px;margin:0;padding:0;}
 .ip{height:24px;width:170px;font-size:14px;line-height:24px;border:1px solid #559ED5;background-color:#FFF;}
 -->
 </style>
-<script type="text/javascript" src="<?php echo $this->getAssetUrl('js'); ?>/jquery/jquery.min.js?version=1.11.2"></script>
-<script type="text/javascript" src="<?php echo $this->getAssetUrl('js'); ?>/jquery/jquery.form.min.js?version=3.51.0"></script>
+<script type="text/javascript" src="<?php echo $baseScriptUrl; ?>/jquery/jquery.min.js?version=1.11.2"></script>
+<script type="text/javascript" src="<?php echo $baseScriptUrl; ?>/jquery/jquery.form.min.js?version=3.51.0"></script>
 <script type="text/javascript">
 function showRequest(){
 	var user = $('#user_name').val();
@@ -46,11 +46,11 @@ function showResponse(data){
 			alert(data.msg);
 		}
 		//当有网址跳转或页面刷新时
-		if(data.data.nexturl!=''){
-			if(data.data.nexturl=='refresh'){
+		if(data.data.targetUrl!=''){
+			if(data.data.targetUrl=='refresh'){
 				location.reload();
 			} else {
-				location.href=data.data.nexturl;
+				location.href=data.data.targetUrl;
 			}
 		}
 	} else {
@@ -80,7 +80,7 @@ $(document).ready(function(){
 <div class="login_box">
   <table width="400" border="0" cellspacing="0" cellpadding="0" style="margin-top:5px;">
     <tr>
-      <td height="70" colspan="3" align="left"><img src="<?php echo $this->getAssetUrl('images'); ?>/logo.jpg" width="350" height="70" border="0" title="doitphp tools logo"></td>
+      <td height="70" colspan="3" align="left"><img src="<?php echo $baseImageUrl; ?>/logo.jpg" width="350" height="70" border="0" title="doitphp tools logo"></td>
       </tr>
    </table>
    <table width="400" border="0" cellspacing="0" cellpadding="0" style="margin-top:5px;">
@@ -94,17 +94,7 @@ $(document).ready(function(){
       <td width="120" height="50" align="center">密 码：</td>
       <td width="10">&nbsp;</td>
       <td width="270" align="left"><input type="password" name="user_password" class="ip" id="user_password" /></td>
-    </tr>
-    <tr>
-      <td width="120" height="60" align="center">验证码：</td>
-      <td width="10">&nbsp;</td>
-      <td width="270"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td width="70" height="60" align="left"><input type="text" name="vd_code" class="ip" id="vd_code" style="width:60px;"/></td>
-          <td width="200" align="left"><img src="<?php echo $this->getActionUrl('vdcode'); ?>/?time=<?php echo time(); ?>" style="border:none; cursor:pointer;" id="vd_image" onclick="refresh_vdcode();" title="点击图片更新验证码"/>&nbsp;<a href="javascript:void(0);" onclick="refresh_vdcode();" title="点击刷新验证码" style="color:#333333; font-size:12px;">刷新</a></td>
-        </tr>
-      </table></td>
-    </tr>
+    </tr>    
     <tr>
       <td height="50" colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>

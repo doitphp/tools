@@ -2,11 +2,11 @@
 /**
  * 创建项目目录及文件管理模型
  *
- * @author tommy <streen003@gmail.com>
+ * @author tommy <tommy@doitphp.com>
  * @link http://www.doitphp.com
  * @copyright Copyright (C) Copyright (c) 2012 www.doitphp.com All rights reserved.
  * @license New BSD License.{@link http://www.opensource.org/licenses/bsd-license.php}
- * @version $Id: Webapp.php 1.0 2013-01-11 21:53:32Z tommy <streen003@gmail.com> $
+ * @version $Id: Webapp.php 1.0 2013-01-11 21:53:32Z tommy <tommy@doitphp.com> $
  * @package model
  * @since 1.0
  */
@@ -22,16 +22,16 @@ class WebAppModel {
 	 */
 	public function createIndexFile() {
 
-		$filePath = rtrim(WEB_APP_PATH, '/') . DS . 'index.php';
-
+		$filePath   = rtrim(WEB_APP_PATH, '/') . DS . 'index.php';
+		$timeString = date('Y-m-d H:i:s');
 		$fileContent = <<<EOT
 <?php
 /**
  * application index
  *
- * @author tommy <streen003@gmail.com>
+ * @author tommy <tommy@doitphp.com>
  * @copyright Copyright (C) 2009-2012 www.doitphp.com All rights reserved.
- * @version \$Id: index.php 1.0 2012-02-12 01:14:18Z tommy \$
+ * @version \$Id: index.php 1.0 {$timeString}Z tommy \$
  * @package application
  * @since 1.0
  */
@@ -53,7 +53,7 @@ require_once APP_ROOT . '/doitphp/DoitPHP.php';
 /**
  * 启动应用程序(网站)进程
  */
-doit::run(\$config);
+Doit::run(\$config);
 EOT;
 
 		return File::writeFile($filePath, $fileContent);
@@ -93,9 +93,7 @@ EOT;
 User-agent: *
 Crawl-delay: 10
 Disallow: /doitphp/
-Disallow: /tools/
 Disallow: /application/
-Disallow: /assets/
 Disallow: /cache/
 Disallow: /logs/
 EOT;
@@ -111,17 +109,18 @@ EOT;
 	 */
 	protected function _createConfigFile() {
 
-		$filePath = rtrim(WEB_APP_PATH, '/') . DS . 'application/config/application.php';
+		$filePath   = rtrim(WEB_APP_PATH, '/') . DS . 'application/config/application.php';
+		$timeString = date('Y-m-d H:i:s');
 		$fileContent = <<<EOT
 <?php
 /**
  * 项目主配置文件
  *
- * @author tommy <streen003@gmail.com>
+ * @author tommy <tommy@doitphp.com>
  * @link http://www.doitphp.com
  * @copyright Copyright (C) Copyright (c) 2012 www.doitphp.com All rights reserved.
  * @license New BSD License.{@link http://www.opensource.org/licenses/bsd-license.php}
- * @version \$Id: application.php 2.0 2013-01-11 21:53:32Z tommy <streen003@gmail.com> $
+ * @version \$Id: application.php 2.0 {$timeString}Z tommy <tommy@doitphp.com> $
  * @package config
  * @since 1.0
  */
@@ -225,7 +224,7 @@ EOT;
 	protected function _create403IndexFile($dirPath) {
 		$filePath = $dirPath . '/index.html';
 		$fileContent = <<<EOT
-<!DOCTYPE html><html><head><title>403 Forbidden</title></head><body><h1>Forbidden</h1><p>Directory access is forbidden.</p></body></html>
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>403 Forbidden</title></head><body><h1>Forbidden</h1><p>Directory access is forbidden.</p></body></html>
 EOT;
 
 		return File::writeFile($filePath, $fileContent);

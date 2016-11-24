@@ -2,7 +2,7 @@
 /**
  * file: ExtNote.php
  *
- * Enter description here ...
+ * 项目功能说明、版权信息等附助说明的数据操作
  * @author
  * @copyright Copyright (C)  All rights reserved.
  * @version $Id: ExtNote.php 1.0 2013-01-24 22:05:42Z $
@@ -22,15 +22,15 @@ class ExtNoteWidget extends Widget {
 	public function renderContent($params = null) {
 
 		//get cookie params
-		$cookieObj = $this->instance('noteStorage');
+		$cookieObj  = $this->instance('noteStorage');
 		$noteCookie = $cookieObj->getNote();
 		if (!$noteCookie) {
 			$noteCookie = array(
-			'desc' => null,
-			'author' => null,
+			'desc'      => null,
+			'author'    => null,
 			'copyright' => null,
-			'lisence' => null,
-			'link' => null,
+			'lisence'   => null,
+			'link'      => null,
 			);
 		}
 

@@ -2,11 +2,11 @@
 /**
  * class method cookie数据存贮管理
  *
- * @author tommy <streen003@gmail.com>
+ * @author tommy <tommy@doitphp.com>
  * @link http://www.doitphp.com
  * @copyright Copyright (C) Copyright (c) 2012 www.doitphp.com All rights reserved.
  * @license New BSD License.{@link http://www.opensource.org/licenses/bsd-license.php}
- * @version $Id: classMethodStorage.php 1.0 2013-02-13 10:39:56Z tommy <streen003@gmail.com> $
+ * @version $Id: classMethodStorage.php 1.0 2013-02-13 10:39:56Z tommy <tommy@doitphp.com> $
  * @package library
  * @since 1.0
  */
@@ -18,7 +18,7 @@ class classMethodStorage extends methodStorage {
      *
      * @var string
      */
-    const METHOD_CACHE_NAME = 'doit_tools_library_method_storage';
+    const METHOD_CACHE_NAME = 'doitToolsLibraryMethodStorage';
 
     /**
      * 分析缓存文件的路径

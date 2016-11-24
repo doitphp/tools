@@ -2,11 +2,11 @@
 /**
  * cookie数据存贮管理
  *
- * @author tommy <streen003@gmail.com>
+ * @author tommy <tommy@doitphp.com>
  * @link http://www.doitphp.com
  * @copyright Copyright (C) Copyright (c) 2012 www.doitphp.com All rights reserved.
  * @license New BSD License.{@link http://www.opensource.org/licenses/bsd-license.php}
- * @version $Id: noteStorage.php 1.0 2013-01-26 21:52:56Z tommy <streen003@gmail.com> $
+ * @version $Id: noteStorage.php 1.0 2013-01-26 21:52:56Z tommy <tommy@doitphp.com> $
  * @package library
  * @since 1.0
  */
@@ -18,7 +18,7 @@ class noteStorage {
 	 *
 	 * @var string
 	 */
-	const NOTE_COOKIE_NAME = 'doit_tools_note_cookie';
+	const NOTE_COOKIE_NAME = 'doitToolsNoteCookie';
 
 	/**
 	 * cookie 生存周期

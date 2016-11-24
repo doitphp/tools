@@ -45,7 +45,7 @@
     <td align="left"><span class="blue"><b>WebApp Path</b></span> : </td>
     <td align="left"><?php
 	if (is_dir($webappPath)) {
-		echo is_writable($webappPath) ? Html::image($this->getAssetUrl('images') . '/check_right.gif') . ' <span class="green">' . $webappPath . '</span> (支持文件写入操作)' :  Html::image($this->getAssetUrl('images') . '/check_error.gif') . ' <span class="red"><b>'. $webappPath . '</b></span>  (注:<span class="red">当前目录没有文件写入权限!</span>)';
+		echo is_writable($webappPath) ? Html::image($baseImageUrl . '/check_right.gif') . ' <span class="green">' . $webappPath . '</span> (支持文件写入操作)' :  Html::image($baseImageUrl . '/check_error.gif') . ' <span class="red"><b>'. $webappPath . '</b></span>  (注:<span class="red">当前目录没有文件写入权限!</span>)';
 	} else {
 		echo '<span class="red">对不起,WebApp目录不存在!</span>';
 	}
