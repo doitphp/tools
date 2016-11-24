@@ -1,5 +1,5 @@
 /* DoitCSS 1.0*/
-body{margin:0;padding:0;border:0;font-family:微软雅黑, 宋体, Arial, Helvetica, sans-serif;font-size:12px;line-height:20px;color:#222;background-color:#FFF;font-weight:400;}
+body{margin:0;padding:0;border:0;font-family:微软雅黑, 宋体, Arial, Helvetica, sans-serif;font-size:12px;line-height:20px;color:#222;background-color:#F5F5F5;font-weight:400;}
 a img{border:none;}
 :focus{outline:0;}
 h1,h2,h3,h4,h5,h6{color:#111;line-height:150%;margin-bottom:10px;font-weight:400;}
@@ -52,7 +52,7 @@ fieldset,#IE8#HACK{padding-top:20px;}
 legend,#IE8#HACK{margin-top:0;margin-bottom:0;}
 input[type=text],input[type=password],input[type=url],input[type=email],input.text,input.title,textarea{background-color:#fff;border:1px solid #bbb;color:#000;}
 input[type=text]:focus,input[type=password]:focus,input[type=url]:focus,input[type=email]:focus,input.text:focus,input.title:focus,textarea:focus{border-color:#666;}
-select{background-color:#fff;border-style:solid;border-width:1px;}
+select{padding:5px;font-size:14px;background-color:#fff;border-style:solid;border-width:1px;}
 input[type=text],input[type=password],input[type=url],input[type=email],input.text,input.title,textarea,select{margin:10px 0;}
 input.text,input.title{width:300px;padding:5px;}
 textarea{width:400px;height:240px;padding:5px;}
@@ -65,7 +65,7 @@ textarea{width:400px;height:240px;padding:5px;}
 .notice a{color:#514721;}
 .success a{color:#264409;}
 .info a{color:#205791;}
-.page,.container{width:960px;margin:0 auto;}
+.page,.container{width:960px;margin:20px auto 0;padding:30px; background:#FFF;}
 .page760{width:760px;margin:0 auto;}
 .page100{width:100%;margin:0 auto;}
 .content,.header,.footer{width:100%;height:auto;margin:0;}
