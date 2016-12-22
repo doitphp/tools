@@ -178,7 +178,7 @@ class CtrController extends PublicController {
 		if ($viewStatus) {
 			//分析视图目录的路径
 			$viewDirPath = $webAppPath . $controllerPath;
-			$viewDirPath = substr(str_replace('//', '/', $viewDirPath), 0, -11) . 'views/' . strtolower($controllerName);
+			$viewDirPath = substr(str_replace('//', '/', $viewDirPath), 0, -11) . 'views/' . strtolower(str_replace('_', '/', $controllerName));
 
 			File::makeDir($viewDirPath);
 
@@ -757,7 +757,7 @@ class CtrController extends PublicController {
 
         //create widget view file
         if ($viewStatus) {
-            $viewDirPath = $webAppPath . $widgetPath . '/views';
+            $viewDirPath = $webAppPath . '/application/views/widgets';
             $viewDirPath = str_replace('//', '/', $viewDirPath);
             File::makeDir($viewDirPath);
 
