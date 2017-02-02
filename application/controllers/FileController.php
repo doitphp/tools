@@ -95,7 +95,7 @@ class FileController extends PublicController {
 
         $fileUploadObj = $this->instance('FileUpload');
 
-        $result = $fileUploadObj->setLimitSize(1024*1024*8)->render($uploadFile, $newFile);
+        $result = $fileUploadObj->setLimitSize(1024*1024*8)->moveFile($uploadFile, $newFile);
 
         (!$result) ? $this->ajax(false, '对不起！操作失败，请重新操作') : $this->ajax(true, '文件上传成功！');
 	}
@@ -126,26 +126,6 @@ class FileController extends PublicController {
 	    }
 
 		$this->ajax(true, '文件删除成功！');
-	}
-
-	/**
-	 * ajax调用：目录删除操作
-	 *
-	 * @access public
-	 * @return string
-	 */
-	public function ajaxdeletedirAction() {
-
-	}
-
-	/**
-	 * ajax调用：文件及目录的重命名
-	 *
-	 * @access public
-	 * @return string
-	 */
-	public function ajaxrenameAction() {
-
 	}
 
 }

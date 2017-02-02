@@ -5,7 +5,7 @@
  * application index
  * @author tommy <tommy@doitphp.com>
  * @copyright Copyright (C) 2009-2012 www.doitphp.com All rights reserved.
- * @version $Id: index.php 1.0 2012-02-12 01:14:18Z tommy $
+ * @version $Id: index.php 2.6 2017-02-02 21:24:00Z tommy $
  * @package application
  * @since 1.0
  */
