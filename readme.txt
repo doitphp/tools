@@ -1,4 +1,4 @@
-DoitPHP Tools V2.5
+DoitPHP Tools V2.6
 =============================
 
 感谢您选用doitphp tools，这是一个doitphp的辅助开发工具。使用本程序，可在快速开发项目代码。
